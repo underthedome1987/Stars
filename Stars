@@ -1,0 +1,23 @@
+import turtle
+pegasus = turtle.Turtle()
+pegasus.getscreen().bgcolor("#074700")
+
+pegasus.speed(10)
+pegasus.penup()
+pegasus.goto((-100, 100))
+pegasus.pendown()
+
+def star(turtle, size):
+	if size <= 10:
+		return 
+	else:
+		turtle.begin_fill()
+		for i in range(5):
+			turtle.forward(size)
+			star(turtle, size/3)
+			turtle.left(216)
+		turtle.end_fill()
+
+star(pegasus, 220)
+
+turtle.done()
